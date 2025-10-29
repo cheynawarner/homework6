@@ -4,6 +4,6 @@ format: html
 editor: visual
 ---
 
-## wooo 
+## we don't know each other
 
-deleting things can u see it
+have u ever collaborated ... I haven't
