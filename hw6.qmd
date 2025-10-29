@@ -4,6 +4,12 @@ format: html
 editor: visual
 ---
 
+<<<<<<< HEAD
 ## we don't know each other
 
 have u ever collaborated ... I haven't
+=======
+**Cheyna deleting everything:)**
+
+yayayayayayayayayayayayayayayayayayayayayayayayayayayayayayaaayayayayayayayay
+>>>>>>> origin/main
