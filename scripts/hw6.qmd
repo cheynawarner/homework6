@@ -1,7 +1,11 @@
 ---
 title: "hw6"
-format: html
+format: pdf
 editor: visual
+fig-width: 6.5
+fig-height: 8
+execute: 
+  echo: false
 ---
 
 **Cheyna deleting everything:)**
