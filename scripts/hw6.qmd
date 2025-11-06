@@ -1,13 +1,32 @@
 ---
 title: "hw6"
 format: pdf
+bibliography: references.bib
+  link-citations: true
+author: "Cheyna & Erika & Kyla"
+date: "2023-5-25"
 editor: visual
+execute: 
+  eval: true
+  echo: false
 fig-width: 6.5
 fig-height: 8
-execute: 
-  echo: false
 ---
 
-**Cheyna deleting everything:)**
+#Library Packages
 
-yayayayayayayayayayayayayayayayayayayayayayayayayayayayayayaaayayayayayayayay
+```{r}
+library(here)
+library(janitor)
+library(rio)
+```
+
+# Import Data
+
+```{r}
+star <- import(here("data", "star.csv")) %>%  
+  clean_names()
+```
+
+# ERIKA KYLA HELP 
+Help I do not know how to cite @janitor2024
