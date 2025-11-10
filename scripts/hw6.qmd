@@ -20,6 +20,7 @@ fig-height: 8
 library(here)
 library(janitor)
 library(rio)
+library(ggplot2)
 ```
 
 ```{r}
@@ -30,4 +31,22 @@ star <- import(here("data", "star.csv")) %>%
 
 To complete this homework, we are using several packages and R (@rio2023, @janitor2024, @here2020, @2023R)
 
-# References 
+```{r}
+# Create a plot of teacher experience vs math scores
+star |> 
+  ggplot(aes(x = totexp, y = tmathss)) +
+  geom_point(color = "darkgrey") +
+  geom_smooth(method = "lm", aes(color = frl)) +
+  labs(x = "Teacher Experience (years)",
+       y = "Total Math Scale Score",
+       title = "Relation between teacher experience and math scores",
+       subtitle = "Separate regression lines displayed by free/reduced price lunch status") +
+  theme_minimal() +
+  scale_color_discrete(name = "Lunch status", 
+                      labels = c("Free/Reduced Price Meals", "Paid Meals")) +
+  theme(legend.position = "bottom")
+```
+
+Based on the above figure, it seems that teacher experience has little to no effect on total math scale scores. However, we do see that students with free/reduced price meals have slightly better math scores than those students with paid meals.
+
+# References
