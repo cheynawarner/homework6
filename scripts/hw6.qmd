@@ -21,6 +21,11 @@ library(here)
 library(janitor)
 library(rio)
 library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+
+
 ```
 
 ```{r}
@@ -29,7 +34,26 @@ star <- import(here("data", "star.csv")) %>%
   clean_names()
 ```
 
-To complete this homework, we are using several packages and R (@rio2023, @janitor2024, @here2020, @2023R)
+To complete this homework, we are using several packages and R (@rio2023, @janitor2024, @here2020, @2023R, @knitr2025, @dplyr2023, @kableExtra2024)
+
+```{r}
+# recreating the table 
+
+kable_table <- star %>%
+  group_by(sex, frl) %>%
+  summarise(
+    math_mean = mean(tmathss, na.rm = TRUE),
+    math_sd   = sd(tmathss, na.rm = TRUE),
+    rdg_mean  = mean(treadss, na.rm = TRUE),
+    rdg_sd    = sd(treadss, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  kable(booktabs = TRUE, digits = 2) %>%
+  kable_styling(full_width = FALSE)
+
+print(kable_table)
+
+```
 
 ```{r}
 # Create a plot of teacher experience vs math scores
