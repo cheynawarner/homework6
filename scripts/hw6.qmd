@@ -1,0 +1,33 @@
+---
+title: "hw6"
+format: html
+bibliography: references.bib
+link-citations: true
+author: "Cheyna & Erika & Kyla"
+date: "2023-5-25"
+editor: visual
+execute: 
+  eval: true # evaluates code
+  echo: false # does not show code
+  warning: false # does not show warnings
+  error: false #does not print errors
+fig-width: 6.5
+fig-height: 8
+---
+
+```{r}
+#Library Packages
+library(here)
+library(janitor)
+library(rio)
+```
+
+```{r}
+# Import Data
+star <- import(here("data", "star.csv")) %>%  
+  clean_names()
+```
+
+To complete this homework, we are using several packages and R (@rio2023, @janitor2024, @here2020, @2023R)
+
+# References 
